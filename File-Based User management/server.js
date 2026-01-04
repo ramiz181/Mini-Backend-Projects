@@ -15,7 +15,6 @@ app.post('/auth/register/', (req, res) => {
 
     const exists = users.some(user => user.email === body.email)
     console.log(exists);
-    let arr
 
     if (exists) {
         return res.json({ message: "user already exists" })
@@ -52,5 +51,46 @@ app.post('/auth/register/', (req, res) => {
     // }
 
 })
+
+app.post('/auth/login/', (req, res) => {
+
+    // destructuring values
+    const { email, password } = req.body
+
+    const user = users.find(user => user.email === email)
+
+    // res.json ==> sends a response 
+    // return ==> stops the function execution
+    // without "return" keyword function will continue running after sending response "User doesn't exist"
+
+    if (!user) return res.json({ message: "User doesn't exist" })
+    if (user.password !== password) return res.json({ message: "Password mismatch" })
+
+    res.json({ message: "User logged in...redirecting to homepage" })
+})
+
+app.get('/user/:id', (req, res) => {
+
+    const id = Number(req.params.id);
+    const user = users.find(user => user.id === id)
+
+    // const userCopy = { ...user }
+    // delete userCopy.password
+    const { password, ...userCopy } = user
+    res.json(userCopy)
+})
+
+app.get('/user/', (req, res) => {
+
+    // const userCopy = [...users]
+    const updatedUser = users.map(user => {
+        const userCopy = { ...user }
+        delete userCopy.password
+        return userCopy
+    })
+    res.json(updatedUser)
+
+})
+
 
 app.listen(PORT, () => console.log("Server started"));
