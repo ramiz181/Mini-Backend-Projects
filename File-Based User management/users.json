@@ -1,16 +1,20 @@
 [
     {
         "id": 1,
-        "firstname": "Ramiz",
-        "lastname": "Malik",
+        "username": "ramizmalik490",
+        "firstName": "Ramiz",
+        "lastName": "Malik",
         "email": "ramizmalik@gmail.com",
-        "password": "ramiz181"
+        "password": "ramiz12@",
+        "jobTitle": "Website Developer"
     },
     {
         "id": 2,
-        "firstname": "Bassam",
-        "lastname": "Malik",
+        "username": "bassammalik321",
+        "firstName": "Bassam",
+        "lastName": "Malik",
         "email": "bassammalik@gmail.com",
-        "password": "bassam091"
+        "password": "bassam12@",
+        "jobTitle": "Graphics Designer"
     }
 ]
