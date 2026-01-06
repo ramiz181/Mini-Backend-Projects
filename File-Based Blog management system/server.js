@@ -2,6 +2,7 @@ import express from 'express'
 import posts from './data/posts.json' with {type: 'json'}
 import fs from 'fs'
 import { requireAuthorAuth } from './middlewares/requireAuthorAuth.middleware.js'
+import { checkUserRole } from './middlewares/checkUserRole.middleware.js'
 
 const app = express()
 const PORT = 5000
@@ -33,6 +34,20 @@ app.patch('/posts/:id', requireAuthorAuth, (req, res) => {
     })
     res.json(post)
     // posts.push(posts, body)
+})
+
+app.delete('/posts/:id', requireAuthorAuth, checkUserRole, (req, res) => {
+
+    const id = req.params.id
+
+    const updatedPosts = posts.filter(post => post.id !== id)
+    fs.writeFile('./data/posts.json', JSON.stringify(updatedPosts), (err) => {
+        if (err) throw err
+    })
+
+    // console.log(updatedPosts);
+    res.json(updatedPosts)
+
 })
 
 app.listen(PORT, () => console.log("server started"));
