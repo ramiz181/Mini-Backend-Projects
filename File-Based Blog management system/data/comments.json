@@ -1,0 +1,9 @@
+[
+    {
+        "id": "c1",
+        "postId": "p1",
+        "userId": "u1",
+        "comment": "Very helpful explanation",
+        "createdAt": "2026-01-01T11:00:00Z"
+    }
+]

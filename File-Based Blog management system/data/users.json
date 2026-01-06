@@ -1,0 +1,10 @@
+[
+    {
+        "id": "u1",
+        "name": "ramiz",
+        "email": "ramiz@gmail.com",
+        "password": "ramiz12@   ",
+        "role": "admin",
+        "status": "online"
+    }
+]
