@@ -6,5 +6,13 @@
         "password": "ramiz12@   ",
         "role": "admin",
         "status": "online"
+    },
+    {
+        "id": "u2",
+        "name": "ubaid",
+        "email": "ubaid@gmail.com",
+        "password": "ubaid12@   ",
+        "role": "user",
+        "status": "offline"
     }
 ]

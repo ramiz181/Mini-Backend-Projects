@@ -1,0 +1,40 @@
+
+edit post       ==> author only
+create post     ==> logged-in user only
+delete post     ==> Admin or author only
+comment post    ==> logged-in user only
+
+POST   /auth/register
+POST   /auth/login
+
+GET             /posts          ---
+GET             /posts/:id      ---
+POST            /posts
+PUT / PATCH     /posts/:id      ---
+DELETE          /posts/:id      ---
+
+GET             /posts/:postId/comments
+POST            /posts/:postId/comments
+DELETE          /comments/:id
+
+
+
+1- build GET post API
+    ==> no author/admin login require
+
+
+2- PATCH API
+    ==> author login require
+        ==> middleware to check author login
+
+    ==> login author or post ka author bhe verify krna h k same h k nhi
+
+    ==> if logged-in
+        ==> edit blog
+
+3- DELETE API
+    ==> author login require
+        ==> middleware to check author login
+
+    ==> if logged-in 
+        ==> delete blog

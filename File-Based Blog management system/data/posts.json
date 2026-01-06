@@ -3,8 +3,14 @@
         "id": "p1",
         "title": "Understanding Express Middleware",
         "description": "Post content here...",
-        "status": "completed",
-        "authorID": 1,
+        "authorID": "u1",
+        "createdAt": "2026-01-01T10:30:00Z"
+    },
+    {
+        "id": "p2",
+        "title": "Understanding File systems",
+        "description": "Post content here...",
+        "authorID": "u2",
         "createdAt": "2026-01-01T10:30:00Z"
     }
 ]
